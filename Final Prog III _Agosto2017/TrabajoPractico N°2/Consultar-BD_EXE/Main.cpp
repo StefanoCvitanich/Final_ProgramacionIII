@@ -66,20 +66,22 @@ void main()
 	c->agregarJugador(jugador, password);
 	cout<<c->listarJugadores();
 	c->borrarJugador("Renly");
-	c->borrarJuagdor(7);
+	//c->borrarJuagdor(7);
 	cout << c->listarJugadores();
-	*/
-	/*
+	
+	cout << c->listarHighScores(Todo, "");
 	cout << c->listarHighScores(Juego,"Flight of the Immortals");
 	cout << c->listarHighScores(Jugador, "Pedro");
 	//c->borrarHighScores("Juan", "Flight of the Immortals", 3);
 	cout << c->listarHighScores(Todo, "");
 	
+	cout << c->listarSavedGames(Todo, "");
 	cout << c->listarSavedGames(Juego, "Flight of the Immortals");
 	cout << c->listarSavedGames(Jugador, "Pedro");
 	//c->borrarSavedGame("Juan", "Flight of the Immortals");
 	cout << c->listarSavedGames(Todo, "");
 
+	cout << c->listarRegistros(Todo, "");
 	cout << c->listarRegistros(Juego, "Flight of the Immortals");
 	cout << c->listarRegistros(Jugador, "Pedro");
 	//c->borrarRegistros("Juan", "Flight of the Immortals");

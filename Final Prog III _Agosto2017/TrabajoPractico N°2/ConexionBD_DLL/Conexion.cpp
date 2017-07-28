@@ -77,9 +77,6 @@ void Conexion::cargarEstructura()
 		printf("Error executing SQL!: %s\n", PQerrorMessage(dbconn));
 		PQclear(res);
 	}
-
-	res = PQexec(dbconn, "END");
-	PQclear(res);
 }
 
 //-------------------------------------------------

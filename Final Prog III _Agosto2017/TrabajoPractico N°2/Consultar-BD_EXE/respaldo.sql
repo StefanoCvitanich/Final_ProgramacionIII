@@ -193,7 +193,6 @@ SELECT pg_catalog.setval('"HighScores_ID_HS_seq"', 1, false);
 --
 
 COPY "Juegos" ("ID_Juego", "Nombre_Juego", "Descripcion_Juego") FROM stdin;
-2	Burning Sands	Un juego muy copado
 \.
 
 
@@ -201,7 +200,7 @@ COPY "Juegos" ("ID_Juego", "Nombre_Juego", "Descripcion_Juego") FROM stdin;
 -- Name: Juegos_ID_Juego_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Juegos_ID_Juego_seq"', 3, true);
+SELECT pg_catalog.setval('"Juegos_ID_Juego_seq"', 1, false);
 
 
 --
@@ -209,8 +208,6 @@ SELECT pg_catalog.setval('"Juegos_ID_Juego_seq"', 3, true);
 --
 
 COPY "Jugadores" ("ID_Jugador", "Username", "Password") FROM stdin;
-1	Sonny	1234
-2	Pepe	1010
 \.
 
 
@@ -218,7 +215,7 @@ COPY "Jugadores" ("ID_Jugador", "Username", "Password") FROM stdin;
 -- Name: Jugadores_ID_Jugador_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Jugadores_ID_Jugador_seq"', 2, true);
+SELECT pg_catalog.setval('"Jugadores_ID_Jugador_seq"', 1, false);
 
 
 --

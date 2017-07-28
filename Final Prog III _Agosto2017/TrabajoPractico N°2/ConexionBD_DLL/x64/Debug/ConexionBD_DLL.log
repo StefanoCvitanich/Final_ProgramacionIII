@@ -1,17 +1,17 @@
-﻿Compilación iniciada a las 27/07/2017 04:29:28 a.m..
-     1>Proyecto "C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\ConexionBD_DLL\ConexionBD_DLL.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 28/07/2017 03:03:49 a.m..
+     1>Proyecto "C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\ConexionBD_DLL\ConexionBD_DLL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\PostgreSQL\9.5" /Zi /nologo /W3 /WX- /sdl /Od /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt Conexion.cpp
          Conexion.cpp
-     1>Conexion.cpp(793): warning C4129: 'N' : secuencia de escape de carácter no reconocida
-     1>c:\users\stefano\desktop\final prog iii febrero\final prog iii _bd_implementada\trabajopractico n°2\conexionbd_dll\conexion.cpp(723): warning C4715: 'Conexion::listarHighScores' : no todas las rutas de acceso de control devuelven un valor
-     1>c:\users\stefano\desktop\final prog iii febrero\final prog iii _bd_implementada\trabajopractico n°2\conexionbd_dll\conexion.cpp(809): warning C4715: 'Conexion::listarSavedGames' : no todas las rutas de acceso de control devuelven un valor
-     1>c:\users\stefano\desktop\final prog iii febrero\final prog iii _bd_implementada\trabajopractico n°2\conexionbd_dll\conexion.cpp(891): warning C4715: 'Conexion::listarRegistros' : no todas las rutas de acceso de control devuelven un valor
+     1>Conexion.cpp(790): warning C4129: 'N' : secuencia de escape de carácter no reconocida
+     1>c:\users\stefano\documents\github\final_programacioniii\final prog iii _agosto2017\trabajopractico n°2\conexionbd_dll\conexion.cpp(720): warning C4715: 'Conexion::listarHighScores' : no todas las rutas de acceso de control devuelven un valor
+     1>c:\users\stefano\documents\github\final_programacioniii\final prog iii _agosto2017\trabajopractico n°2\conexionbd_dll\conexion.cpp(806): warning C4715: 'Conexion::listarSavedGames' : no todas las rutas de acceso de control devuelven un valor
+     1>c:\users\stefano\documents\github\final_programacioniii\final prog iii _agosto2017\trabajopractico n°2\conexionbd_dll\conexion.cpp(888): warning C4715: 'Conexion::listarRegistros' : no todas las rutas de acceso de control devuelven un valor
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\PostgreSQL\9.5\lib" libpq.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.lib" /MACHINE:X64 /DLL x64\Debug\Conexion.obj
-         ConexionBD_DLL.vcxproj -> C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.dll
-     1>Compilación del proyecto terminada "C:\Users\Stefano\Desktop\Final Prog III Febrero\Final Prog III _BD_Implementada\TrabajoPractico N°2\ConexionBD_DLL\ConexionBD_DLL.vcxproj" (Build destinos).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\PostgreSQL\9.5\lib" libpq.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.lib" /MACHINE:X64 /DLL x64\Debug\Conexion.obj
+         ConexionBD_DLL.vcxproj -> C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\x64\Debug\ConexionBD_DLL.dll
+     1>Compilación del proyecto terminada "C:\Users\Stefano\Documents\GitHub\Final_ProgramacionIII\Final Prog III _Agosto2017\TrabajoPractico N°2\ConexionBD_DLL\ConexionBD_DLL.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:02.06
+Tiempo transcurrido 00:00:03.73
