@@ -1,0 +1,5 @@
+http://www.tutorialspoint.com/postgresql/postgresql_c_cpp.htm
+
+http://stackoverflow.com/questions/1138503/good-c-c-connector-library-for-postgresql
+
+https://www.postgresql.org/docs/9.1/static/libpq-example.html

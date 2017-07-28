@@ -1,0 +1,114 @@
+-- Sequence: public."Juegos_ID_Juego_seq" 
+-- DROP SEQUENCE public."Juegos_ID_Juego_seq"; 
+CREATE SEQUENCE public."Juegos_ID_Juego_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1; 
+ALTER TABLE public."Juegos_ID_Juego_seq" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Sequence: public."Jugadores_ID_Jugador_seq" 
+-- DROP SEQUENCE public."Jugadores_ID_Jugador_seq"; 
+CREATE SEQUENCE public."Jugadores_ID_Jugador_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1; 
+ALTER TABLE public."Jugadores_ID_Jugador_seq" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+---------------------------------------------------------------------------------------------------------------------------
+
+
+-- Sequence: public."HighScores_ID_HS_seq" 
+-- DROP SEQUENCE public."HighScores_ID_HS_seq"; 
+CREATE SEQUENCE public."HighScores_ID_HS_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1; 
+ALTER TABLE public."HighScores_ID_HS_seq" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Sequence: public."RegistroDeUso_ID_Registro_seq" 
+-- DROP SEQUENCE public."RegistroDeUso_ID_Registro_seq"; 
+CREATE SEQUENCE public."RegistroDeUso_ID_Registro_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1; 
+ALTER TABLE public."RegistroDeUso_ID_Registro_seq" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+---------------------------------------------------------------------------------------------------------------------------
+
+
+-- Sequence: public."SavedGames_ID_SavedGame_seq" 
+-- DROP SEQUENCE public."SavedGames_ID_SavedGame_seq"; 
+CREATE SEQUENCE public."SavedGames_ID_SavedGame_seq" INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1; 
+ALTER TABLE public."SavedGames_ID_SavedGame_seq" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Table: public."Juegos" 
+-- DROP TABLE public."Juegos"; 
+CREATE TABLE public."Juegos" ( "ID_Juego" integer NOT NULL DEFAULT nextval('"Juegos_ID_Juego_seq"'::regclass), 
+"Nombre_Juego" text NOT NULL, "Descripcion_Juego" text, CONSTRAINT "Juego_PK" PRIMARY KEY ("ID_Juego"), 
+CONSTRAINT "Nombre_Unique" UNIQUE ("Nombre_Juego") ) WITH ( OIDS=FALSE); ALTER TABLE public."Juegos" OWNER TO postgres;
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Table: public."Jugadores" 
+-- DROP TABLE public."Jugadores"; 
+CREATE TABLE public."Jugadores"( "ID_Jugador" integer NOT NULL DEFAULT nextval('"Jugadores_ID_Jugador_seq"'::regclass), "Username" text, "Password" text, CONSTRAINT "Jugador_PK" PRIMARY KEY ("ID_Jugador"), CONSTRAINT "NombreJugador_Unique" UNIQUE ("Username") ) WITH ( OIDS=FALSE ); 
+ALTER TABLE public."Jugadores" OWNER TO postgres; 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Table: public."HighScores" 
+-- DROP TABLE public."HighScores"; 
+CREATE TABLE public."HighScores" ( "ID_HS" integer NOT NULL DEFAULT nextval('"HighScores_ID_HS_seq"'::regclass), "Juego" integer, "Jugador" integer, "Puntuacion" integer, CONSTRAINT "HighScore_PK" PRIMARY KEY ("ID_HS"), CONSTRAINT "Juego_HS_FK" FOREIGN KEY ("Juego") REFERENCES public."Juegos" ("ID_Juego") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT "Jugador_HS_FK" FOREIGN KEY ("Jugador") REFERENCES public."Jugadores" ("ID_Jugador") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ) WITH ( OIDS=FALSE ); 
+ALTER TABLE public."HighScores" OWNER TO postgres; 
+-- Index: public."fki_Juego_HS_FK" 
+-- DROP INDEX public."fki_Juego_HS_FK"; 
+CREATE INDEX "fki_Juego_HS_FK" ON public."HighScores" USING btree ("Juego"); 
+-- Index: public."fki_Jugador_HS_FK" 
+-- DROP INDEX public."fki_Jugador_HS_FK"; 
+CREATE INDEX "fki_Jugador_HS_FK" ON public."HighScores" USING btree ("Jugador"); 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Table: public."RegistroDeUso" 
+-- DROP TABLE public."RegistroDeUso"; 
+CREATE TABLE public."RegistroDeUso" ( "ID_Registro" integer NOT NULL DEFAULT nextval('"RegistroDeUso_ID_Registro_seq"'::regclass),"Juego" integer, "Jugador" integer, "Fecha/Hora" timestamp with time zone, CONSTRAINT "Registro_PK" PRIMARY KEY ("ID_Registro"), CONSTRAINT "Juego_Reg_FK" FOREIGN KEY ("Juego") REFERENCES public."Juegos" ("ID_Juego") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT "Jugador_Reg_FK" FOREIGN KEY ("Jugador") REFERENCES public."Jugadores" ("ID_Jugador") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ) WITH ( OIDS=FALSE ); 
+ALTER TABLE public."RegistroDeUso" OWNER TO postgres; 
+-- Index: public."fki_Juego_Reg_FK" 
+-- DROP INDEX public."fki_Juego_Reg_FK"; 
+CREATE INDEX "fki_Juego_Reg_FK" ON public."RegistroDeUso" USING btree ("Juego"); 
+-- Index: public."fki_Jugador_Reg_FK" 
+-- DROP INDEX public."fki_Jugador_Reg_FK"; 
+CREATE INDEX "fki_Jugador_Reg_FK" ON public."RegistroDeUso" 
+USING btree ("Jugador"); 
+
+
+--------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------------- 
+
+
+-- Table: public."SavedGames" 
+-- DROP TABLE public."SavedGames"; 
+CREATE TABLE public."SavedGames" ( "ID_SavedGame" integer NOT NULL DEFAULT nextval('"SavedGames_ID_SavedGame_seq"'::regclass), "Fecha/Hora" timestamp with time zone, "Nombre_Partida" text, "Data" text, "Juego" integer, "Jugador" integer, CONSTRAINT "SavedGame_PK" PRIMARY KEY ("ID_SavedGame"), CONSTRAINT "Juego_SG_FK" FOREIGN KEY ("Juego") REFERENCES public."Juegos" ("ID_Juego") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT "Jugador_SG_FK" FOREIGN KEY ("Jugador") REFERENCES public."Jugadores" ("ID_Jugador") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ) WITH ( OIDS=FALSE ); 
+ALTER TABLE public."SavedGames" OWNER TO postgres; 
+-- Index: public."fki_Juego_FK" 
+-- DROP INDEX public."fki_Juego_FK"; 
+CREATE INDEX "fki_Juego_FK" ON public."SavedGames" USING btree ("Juego"); 
+-- Index: public."fki_Jugador_FK" 
+-- DROP INDEX public."fki_Jugador_FK"; 
+CREATE INDEX "fki_Jugador_FK" ON public."SavedGames" USING btree ("Jugador");

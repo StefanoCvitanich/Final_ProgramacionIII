@@ -1,0 +1,3 @@
+SELECT currval('"Juegos_Id_seq"'::regclass);
+SELECT last_value FROM "Juegos_id_seq"; // EN EL MOMENTO DE GUARDAR | PARA GUARDAR EL VALOR DE LA SECUENCIA DE LOS ID
+SELECT setval('"Juegos_Id_seq"'::regclass, [value]); // EN EL MOMENTO DE CARGAR | PARA SETEAR EL VALOR DE LA SECUENCIA DE LOS ID
